@@ -12,8 +12,11 @@ def questionairre(rand_cmpa,rand_cmpb):
   if rand_cmpa != rand_cmpb:
     print("Compare A: " + game_data.data[rand_cmpa]['name'] + ", a " + game_data.data[rand_cmpa]['description'] + ", from " + game_data.data[rand_cmpa]['country'])
     print(art.vs)
-    print("Compare B: " + game_data.data[rand_cmpb]['name'] + ", a " + game_data.data[rand_cmpb]['description'] + ", from " + game_data.data[rand_cmpb]['country'])
-  comparison(rand_cmpa, rand_cmpb)
+    print("Against B: " + game_data.data[rand_cmpb]['name'] + ", a " + game_data.data[rand_cmpb]['description'] + ", from " + game_data.data[rand_cmpb]['country'])
+    comparison(rand_cmpa, rand_cmpb)
+  else:
+    rand_cmpb = random.randint(0,49)
+    questionairre(rand_cmpa,rand_cmpb)
   
 def comparison(rand_cmpa,rand_cmpb):
   answer = input("Who has more followers? Type 'A' or 'B': ").lower()
